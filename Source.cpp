@@ -50,4 +50,13 @@ char * check_day(int day)
 	strcpy(str_day, days[day - 1]);
 	return str_day;
 }
-
+char * check_month(int month)
+{
+	int num_1, num_2;
+	if (month <= 0 || month > 12) {
+		printf("¬ведений мiс€ць невiрний\n");
+		return NULL;
+	}
+	strcpy(str_month, mount[month - 1]);
+	return str_month;
+}
