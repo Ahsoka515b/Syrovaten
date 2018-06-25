@@ -1,1 +1,7 @@
-﻿  Project31.vcxproj -> C:\Users\User\source\repos\Project31\Debug\Project31.exe
+﻿  Source.cpp
+c:\users\user\source\repos\project31\source.cpp(46): warning C4101: num_1: неиспользованная локальная переменная
+c:\users\user\source\repos\project31\source.cpp(46): warning C4101: num_2: неиспользованная локальная переменная
+c:\users\user\source\repos\project31\source.cpp(56): warning C4101: num_1: неиспользованная локальная переменная
+c:\users\user\source\repos\project31\source.cpp(56): warning C4101: num_2: неиспользованная локальная переменная
+c:\users\user\source\repos\project31\source.cpp(92): warning C4715: proverka_month: значение возвращается не при всех путях выполнения
+  Project31.vcxproj -> C:\Users\User\source\repos\Project31\Debug\Project31.exe

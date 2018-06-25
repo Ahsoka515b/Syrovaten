@@ -8,6 +8,7 @@
 
 char * check_day(int day);
 char * check_month(int month);
+int proverka_month(int month, int day);
 
 const char * days[31] = { "перше", "друге", "третЇ", "четверте", "п'€те", "шосте", "сьоме", "восьме", "дев€те", "дес€те", "одиннадц€те", "дванадц€те",
 "тринадц€те", "чотирнадц€те", "п'€тнадц€те", "ш≥снадц€те", "с≥мнадц€те", "в≥с≥мнадц€те", "дев'€тнадц€те", "двадц€те", "двадц€ть перше", "двадц€ть друге",
@@ -19,14 +20,14 @@ int main()
 {
 
 	setlocale(LC_ALL, "ukr");
-	int day, month, grap;
+	int day, month;
 
 	
 	
 		printf("¬ведiть дату числами(у форматi дд мм): ");
 		scanf_s("%d%d", &day, &month);
-		if (month == 2 && day >= 30) {
-			printf("ѕомилка! ¬ лютому всього 28 днiв, а iнодi 29, у високосний рiк\n");
+	    if (proverka_month( month, day)==0)
+		{
 			return 0;
 		}
 		str_day = (char*)calloc(MAX_LEN, sizeof(char));
@@ -59,4 +60,33 @@ char * check_month(int month)
 	}
 	strcpy(str_month, mount[month - 1]);
 	return str_month;
+}
+int proverka_month(int month, int day)
+{
+	if (month == 2 && day >= 30)
+	{
+		printf("ѕомилка! ¬ лютому всього 28 днiв, а iнодi 29, у високосний рiк\n");
+		return 0;
+	}
+	if (month == 4 && day > 30) 
+	{
+		printf("ѕомилка! ” квiтнi всього 30 днiв\n");
+		return 0;
+	}
+	if (month == 6 && day >= 31)
+	{
+		printf("ѕомилка! ” червнi всього 30 днiв\n");
+		return 0;
+	}
+	if (month == 9 && day > 30)
+	{
+		printf("ѕомилка! ” вереснi всього 30 днiв\n");
+		return 0;
+	}
+	if (month == 11 && day > 30)
+	{
+		printf("ѕомилка! ¬ листопадi всього 30 днiв\n");
+		return 0;
+	}
+	
 }
